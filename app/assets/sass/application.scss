@@ -16,3 +16,33 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+.app-subnav__section {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.app-subnav__section-item--current {
+    margin-left: -14px;
+    padding-left: 10px;
+    border-left: 4px solid #1d70b8;
+    background-color: #fff;
+}
+
+.app-subnav__section-item {
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.govuk-link--no-underline:not(:hover):not(:active) {
+    text-decoration: none;
+}
+.app-subnav__section-item--current .app-subnav__link {
+    font-weight: bold;
+}
+.govuk-link--no-visited-state:link {
+    color: #1d70b8;
+}
