@@ -1,0 +1,137 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+     
+      <ul class="app-subnav__section">
+        
+        <li class="app-subnav__section-item">
+          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="index">Home</a>
+          
+        </li>
+
+        <li class="app-subnav__section-item">
+          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="colour">Colour</a>
+          
+        </li>
+
+        <li class="app-subnav__section-item app-subnav__section-item--current">
+          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Graphs</a>
+          
+        </li>
+      
+       
+      
+        <li class="app-subnav__section-item">
+          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="page-layout">Layout</a>
+          
+        </li>
+      
+       
+      
+      
+
+        <li class="app-subnav__section-item">
+          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="tables">Tables</a>
+          
+        </li>
+      
+        <li class="app-subnav__section-item">
+          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="typography">Typography</a>
+          
+        </li>
+      
+      </ul>
+    </div>
+
+
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">
+       Graphs </h1>
+
+       <h2 class="govuk-heading-l">Graphs titles, intro text and container</h2>
+       <p>Creating a custom text box for the graph title / heading will allow custom spacing and create room to add introcuduction text to help give context to the graph.</p>
+
+       <p>Use a Medium 16pt heading for the title with standard 12pt font for the intro text.</p>
+
+       <p>Ensure both text boxes line up consistenly within the container using the General, X Position. </p>
+
+
+       <div class="example-wrapper"> 
+       <div class="panel"> 
+        <p style="padding-top:0"> Background shape / graph container: </p>
+        Fill: Off<br>
+        Outline: #B1B4B6<br>
+        Outline weight: 1pt
+        </div>
+        </div>
+
+       <h2 class="govuk-heading-l">Line chart</h2>
+      
+       <p>Use a line chart to show a trend over time.</p>
+        
+        <div class="example-wrapper"> 
+
+          <div class="example"> 
+
+            <img src="/public/images/line-chart.png" width="80%" >
+
+          </div>
+
+        <div class="panel"> 
+         
+         
+          <p style="padding-top:0">X axis</p>
+          Type: Continuous<br>
+          Scale type: Linear <br>
+          Font colour: #000<br>
+          Text size: 10pt <br>
+          Bold: On <br>
+
+         
+          <p>Y axis</p>
+          Position: Left<br>
+          Scale type: Linear <br>
+          Font colour: #000<br>
+          Text size: 10pt <br>
+          Gridlines: On <br>
+          Line colour: #B1B4B6<br>
+          Stroke width: 1<br>
+          Line style: Solid
+
+          <p>Data colour</p>
+          Colour: #003078<br>
+
+          <p>Shapes</p>
+          Stroke width: 3<br>
+          Line style: Solid
+
+        
+        </div>
+        </div>
+
+        <h2 class="govuk-heading-l">Constant lines</h2>
+        <div class="example-wrapper"> 
+          <div class="panel"> 
+          
+           Line colour: #B1B4B6<br>
+           Line style: Dashed<br>
+           Position: Behind
+           </div>
+           </div>
+
+
+   
+
+
+    </div>
+  </div>
+
+{% endblock %}
