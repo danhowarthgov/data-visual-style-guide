@@ -56,7 +56,7 @@ p reference {
 .panel {
     float: left;
     background: #f3f2f1;
-    min-height: 100px;
+    min-height: 50px;
 
     width: 95%;
     padding: 15px;
@@ -98,4 +98,21 @@ padding: 10px;
 
   .example img {
     display: block;
+}
+
+.dot {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .colour-table {
+    font-family: "GDS Transport", arial, sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.25;
+    color: #0b0c0c;
+    width: 100%;
+    margin-bottom: 20px;
 }
