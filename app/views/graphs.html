@@ -1,154 +1,102 @@
-
+{% set pageTitle = "Graphs" %}
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
-     
-      <ul class="app-subnav__section">
-        
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="index">Home</a>
-          
-        </li>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/navigation.html" %}
+  </div>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="colour">Colour</a>
-          
-        </li>
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Graphs</h1>
 
-        <li class="app-subnav__section-item app-subnav__section-item--current">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Graphs</a>
-          
-        </li>
+    <h2 class="govuk-heading-l">Graphs titles, intro text and containers</h2>
+    <p>
+      Creating a custom text box for the graph title / heading will allow custom
+      spacing and create room to add introduction text to help give context to
+      the graph.
+    </p>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="interactive-components">Interactive components</a>
-          
-        </li>
-      
-       
-      
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="page-layout">Page layout</a>
-          
-        </li>
-      
-       
-      
-      
+    <p>
+      Use a Medium 16pt heading for the title with standard 12pt font for the
+      intro text.
+    </p>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="tables">Tables</a>
-          
-        </li>
-      
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="typography">Typography</a>
-          
-        </li>
-      
-      </ul>
+    <p>
+      Ensure both text boxes line up consistently within the container using the
+      General, X Position.
+    </p>
+
+    <div class="example-wrapper">
+      <div class="panel">
+        <p style="padding-top: 0">Background shape / graph container:</p>
+        Fill: Off<br />
+        Outline: #B1B4B6<br />
+        Outline weight: 1pt
+      </div>
     </div>
 
+    <h2 class="govuk-heading-l">Line chart</h2>
 
-    <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-xl">
-       Graphs </h1>
+    <p>Use a line chart to show a trend over time.</p>
 
-       <h2 class="govuk-heading-l">Graphs titles, intro text and containers</h2>
-       <p>Creating a custom text box for the graph title / heading will allow custom spacing and create room to add introduction text to help give context to the graph.</p>
+    <div class="example-wrapper">
+      <div class="example">
+        <img src="/public/images/line-chart.png" width="80%" />
+      </div>
 
-       <p>Use a Medium 16pt heading for the title with standard 12pt font for the intro text.</p>
+      <div class="panel">
+        Visual: Line chart <br /><br />
+        <p style="padding-top: 0">Legend (if needed)</p>
+        Position: Top<br />
+        Title: off<br />
+        Font colour: #000<br />
+        Text size: 12pt <br />
+        Style: Markers only <br />
+        Circle deafult icon: On <br />
 
-       <p>Ensure both text boxes line up consistently within the container using the General, X Position. </p>
+        <p>X axis</p>
+        Type: Continuous<br />
+        Scale type: Linear <br />
+        Font colour: #666666<br />
+        Text size: 11pt <br />
+        Bold: Off <br />
 
+        <p>Y axis</p>
+        Position: Left<br />
+        Scale type: Linear <br />
+        Start: 0 <br />
+        Font colour: #666666<br />
+        Text size: 11pt <br />
+        Gridlines: On <br />
+        Line colour: #B1B4B6<br />
+        Stroke width: 1<br />
+        Line style: Solid<br />
+        Title: On<br />
+        Title colour: #000<br />
+        Title text size: 12pt<br />
+        Bold: Off
 
-       <div class="example-wrapper"> 
-       <div class="panel"> 
-        <p style="padding-top:0"> Background shape / graph container: </p>
-        Fill: Off<br>
-        Outline: #B1B4B6<br>
-        Outline weight: 1pt
-        </div>
-        </div>
+        <p>Data colour</p>
+        Colour: #003078<br />
 
-       <h2 class="govuk-heading-l">Line chart</h2>
-      
-       <p>Use a line chart to show a trend over time.</p>
-        
-        <div class="example-wrapper"> 
+        <p>Shapes</p>
+        Stroke width: 3<br />
+        Line style: Solid
+      </div>
+    </div>
 
-          <div class="example"> 
-
-            <img src="/public/images/line-chart.png" width="80%" >
-
-          </div>
-
-        <div class="panel"> 
-          Visual: Line chart <br><br>
-          <p style="padding-top:0">Legend (if needed)</p>
-          Position: Top<br>
-          Title: off<br>
-          Font colour: #000<br>
-          Text size: 12pt <br>
-          Style: Markers only <br>
-          Circle deafult icon: On <br>
-         
-          <p>X axis</p>
-          Type: Continuous<br>
-          Scale type: Linear <br>
-          Font colour: #666666<br>
-          Text size: 11pt <br>
-          Bold: Off <br>
-
-         
-          <p>Y axis</p>
-          Position: Left<br>
-          Scale type: Linear <br>
-          Start: 0 <br>
-          Font colour: #666666<br>
-          Text size: 11pt <br>
-          Gridlines: On <br>
-          Line colour: #B1B4B6<br>
-          Stroke width: 1<br>
-          Line style: Solid<br>
-          Title: On<br>
-          Title colour: #000<br>
-          Title text size: 12pt<br>
-          Bold: Off
-
-          <p>Data colour</p>
-          Colour: #003078<br>
-
-          <p>Shapes</p>
-          Stroke width: 3<br>
-          Line style: Solid
-
-        
-        </div>
-        </div>
-
-        <h2 class="govuk-heading-l">Constant lines</h2>
-        <div class="example-wrapper"> 
-          <div class="panel"> 
-          
-           Line colour and transparency: The same as the data it's related to (Primary or secondary etc)<br>
-           Line style: Dashed<br>
-           Position: Behind
-           </div>
-           </div>
-
-
-   
-
-
+    <h2 class="govuk-heading-l">Constant lines</h2>
+    <div class="example-wrapper">
+      <div class="panel">
+        Line colour and transparency: The same as the data it's related to
+        (Primary or secondary etc)<br />
+        Line style: Dashed<br />
+        Position: Behind
+      </div>
     </div>
   </div>
+</div>
 
 {% endblock %}

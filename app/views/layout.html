@@ -36,7 +36,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  {% if pageTitle %}{{ pageTitle }} - {% endif %}{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block header %}

@@ -1,139 +1,98 @@
-
+{% set pageTitle = "Colour" %}
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
-     
-      <ul class="app-subnav__section">
-        
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="index">Home</a>
-          
-        </li>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/navigation.html" %}
+  </div>
 
-       
-        <li class="app-subnav__section-item app-subnav__section-item--current">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Colour</a>
-          
-        </li>
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Colour</h1>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="graphs">Graphs</a>
-          
-        </li>
+    <p>
+      Taken from the existing
+      <a
+        href="https://design-system.service.gov.uk/styles/colour/"
+        target="_blank"
+        >design system colours</a
+      >
+      for existing styles or patterns.
+    </p>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="interactive-components">Interactive components</a>
-          
-        </li>
-      
-       
-      
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="page-layout">Page layout</a>
-          
-        </li>
-      
-       
-      
-      
+    <h2 class="govuk-heading-m">Text</h2>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="tables">Tables</a>
-          
-        </li>
-      
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="typography">Typography</a>
-          
-        </li>
-      
-      </ul>
-    </div>
+    <table class="colour-table">
+      <tbody>
+        <tr>
+          <td width="10%">
+            <span class="colour-dot" style="background-color: #000"></span>
+          </td>
 
+          <td width="40%">Main text colour</td>
 
-    <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-xl">
-      Colour </h1>
-
-      <p>Taken from the existing <a href="https://design-system.service.gov.uk/styles/colour/" target="_blank">design system colours</a> for existing styles or patterns.</p>
-
-      <h2 class="govuk-heading-m">Text</h2>
-
-      <table class="colour-table">
-      
-       
-        <tbody >
-          <tr >
-              <td width="10%"><span class="dot" style="background-color: #000;"></span> </td>
-  
-            <td width="40%" >Main text colour</td>
-
-            <td >	#000000</td>
-          </tr>
-
-
-          <tr >
-            <td width="10%"><span class="dot" style="background-color: #1d70b8;"></span> </td>
-
-          <td width="40%" >Link colour</td>
-
-          <td >	#1d70b8</td>
-        </tr>
-          
-        </tbody>
-      </table>
-
-      <h2 class="govuk-heading-m">Colour palette</h2>
-
-      <table class="colour-table">
-
-      <tbody >
-        <tr >
-            <td width="10%"><span class="dot" style="background-color: #003078;"></span> </td>
-
-          <td width="40%">First data set colour</td>
-
-          <td >	#003078</td>
+          <td>#000000</td>
         </tr>
 
-        <tr >
-          <td width="10%"><span class="dot" style="background-color: #009988;"></span> </td>
+        <tr>
+          <td width="10%">
+            <span class="colour-dot" style="background-color: #1d70b8"></span>
+          </td>
 
-        <td width="40%">Secondary data set colour </td>
+          <td width="40%">Link colour</td>
 
-        <td >	#009988</td>
-      </tr>
-
-
-      <tr >
-        <td width="10%"><span class="dot" style="background-color: #666666;"></span> </td>
-
-      <td width="40%">Graph x/y axis label colours</td>
-
-      <td >	#666666</td>
-    </tr>
-
-
-        <tr >
-          <td width="10%"><span class="dot" style="background-color: #b1b4b6;"></span> </td>
-
-        <td width="40%" >Border lines</td>
-
-        <td >	#b1b4b6</td>
-      </tr>
-        
+          <td>#1d70b8</td>
+        </tr>
       </tbody>
     </table>
 
+    <h2 class="govuk-heading-m">Colour palette</h2>
 
-    </div>
+    <table class="colour-table">
+      <tbody>
+        <tr>
+          <td width="10%">
+            <span class="colour-dot" style="background-color: #003078"></span>
+          </td>
+
+          <td width="40%">First data set colour</td>
+
+          <td>#003078</td>
+        </tr>
+
+        <tr>
+          <td width="10%">
+            <span class="colour-dot" style="background-color: #009988"></span>
+          </td>
+
+          <td width="40%">Secondary data set colour</td>
+
+          <td>#009988</td>
+        </tr>
+
+        <tr>
+          <td width="10%">
+            <span class="colour-dot" style="background-color: #666666"></span>
+          </td>
+
+          <td width="40%">Graph x/y axis label colours</td>
+
+          <td>#666666</td>
+        </tr>
+
+        <tr>
+          <td width="10%">
+            <span class="colour-dot" style="background-color: #b1b4b6"></span>
+          </td>
+
+          <td width="40%">Border lines</td>
+
+          <td>#b1b4b6</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>
 
 {% endblock %}

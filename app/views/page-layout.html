@@ -1,141 +1,112 @@
-
+{% set pageTitle = "Page Layout" %}
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
-     
-      <ul class="app-subnav__section">
-        
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="index">Home</a>
-          
-        </li>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "includes/navigation.html" %}
+  </div>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="colour">Colour</a>
-          
-        </li>
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">Page layout</h1>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="graphs">Graphs</a>
-          
-        </li>
-      
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="interactive-components">Interactive components</a>
-          
-        </li>
-      
-        <li class="app-subnav__section-item app-subnav__section-item--current">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="page-layout">Page layout</a>
-          
-        </li>
-      
-       
-      
+    <p>
+      Use the
+      <a
+        href="https://design-system.service.gov.uk/styles/layout/#grid-system"
+        target="_blank"
+      >
+        grid system
+      </a>
+      wherever possible to lay out content.
+    </p>
 
-        <li class="app-subnav__section-item">
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="tables">Tables</a>
-          
-        </li>
-        <li class="app-subnav__section-item">
-       
-          <a class="app-subnav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="typography">Typography</a>
-          
-        </li>
-      
-      </ul>
-    </div>
+    <h2 class="govuk-heading-l">Text box alignment</h2>
 
+    <p>
+      When creating content on the left side of the screen make sure it's all
+      aligned evenly by setting each component in the General section, X
+      position: 30.
+    </p>
 
-    <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-xl">
-       Page layout </h1>
-
-       <p>Use the <a href="https://design-system.service.gov.uk/styles/layout/#grid-system" target="_blank"> grid system </a> wherever possible to lay out content.</p>
-
-       <h2 class="govuk-heading-l">Text box alignment</h2>
-      
-       <p>When creating content on the left side of the screen make sure it's all aligned evenly by setting each component in the General section, X position: 30.
-      </p>
-    
-     <div class="example-wrapper"> 
-
-      <div class="no-text-example"> 
-
-        <img src="/public/images/text-box-alignment.png" width="50%" >
-
+    <div class="example-wrapper">
+      <div class="example">
+        <img src="/public/images/text-box-alignment.png" />
       </div>
-
-
     </div>
 
     <h2 class="govuk-heading-l">Navigation</h2>
-    <p>Taken from the DWP design examples for <a href="https://dwp-design-examples.herokuapp.com/example/navigation-secondary" target="_blank">secondary navigation</a>. </p>
-    <p>There are multiple parts to this pattern, using buttons and layered shapes. It helps to rename these shapes something valuable when layering in the View > Selection pane. </p>
+    <p>
+      Taken from the DWP design examples for
+      <a
+        href="https://dwp-design-examples.herokuapp.com/example/navigation-secondary"
+        target="_blank"
+        >secondary navigation</a
+      >.
+    </p>
+    <p>
+      There are multiple parts to this pattern, using buttons and layered
+      shapes. It helps to rename these shapes something valuable when layering
+      in the View > Selection pane.
+    </p>
 
-
-    <div class="example-wrapper"> 
-
-      <div class="example"> 
-
-        <img src="/public/images/secondary-nav.png" width="100%" >
-
+    <div class="example-wrapper">
+      <div class="example">
+        <img src="/public/images/secondary-nav.png" />
       </div>
 
-    <div class="panel"> 
-      
-      <p style="padding-top:0">Active nav button </p>
-      Select Button > Blank<br>
-      Outline: Off
-      Text: vertical alignment: Middle <br>
-      Horizontal alignment: cente <br>
-      Margins: 4px<br>
-      Icon: Off<br>
-      Background: off <br>
-      Action: off (this isn't needed as this has to look like the active selection)<br>
-    </p>
+      <div class="panel">
+        <h3>Active nav button</h3>
 
-     
-      <p>Active nav button underline (layer ontop of the active nav button and grey underline)</p>
-      Shape> line<br>
-      Outline: On <br>
-      Outline colour: #005EA5<br>
-      Outline weight: 2pt<br>
+        <p>
+          Select Button > Blank<br />
+          Outline: Off Text: vertical alignment: Middle <br />
+          Horizontal alignment: cente <br />
+          Margins: 4px<br />
+          Icon: Off<br />
+          Background: off <br />
+          Action: off (this isn't needed as this has to look like the active
+          selection)<br />
+        </p>
 
-      <p>Other nav link buttons </p>
-      Select Button > Blank<br>
-      Outline: Off
-      Text: font colour: #005EA5
-      Vertical alignment: Middle <br>
-      Horizontal alignment: cente <br>
-      Margins: 4px<br>
-      Icon: Off<br>
-      Background: off <br>
-      Action: on<br>
-      Type: Page navigation <br>
-      Destination: Select your target page<br>
-    </p>
-      
+        <h3>
+          Active nav button underline (layer ontop of the active nav button and
+          grey underline)
+        </h3>
 
-      <p>Grey underline border (bottom layer)</p>
-      Shape > line
-      Online: On<br>
-      Title: off<br>
-      Online colour: #DEE0E2<br>
-      Outline weight: 1pt <br>
+        <p>
+          Shape> line<br />
+          Outline: On <br />
+          Outline colour: #005EA5<br />
+          Outline weight: 2pt
+        </p>
 
-    
+        <h3>Other nav link buttons</h3>
+
+        <p>
+          Select Button > Blank<br />
+          Outline: Off Text: font colour: #005EA5 Vertical alignment: Middle
+          <br />
+          Horizontal alignment: cente <br />
+          Margins: 4px<br />
+          Icon: Off<br />
+          Background: off <br />
+          Action: on<br />
+          Type: Page navigation <br />
+          Destination: Select your target page<br />
+        </p>
+
+        <h3>Grey underline border (bottom layer)</h3>
+        <p>
+          Shape > line Online: On<br />
+          Title: off<br />
+          Online colour: #DEE0E2<br />
+          Outline weight: 1pt
+        </p>
+      </div>
     </div>
-    </div>
-
-
   </div>
 
-{% endblock %}
+  {% endblock %}
+</div>
