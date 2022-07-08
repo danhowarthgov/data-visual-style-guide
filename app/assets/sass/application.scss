@@ -96,9 +96,14 @@ blockquote p:last-of-type {
   font-weight: 400;
   font-size: 19px;
   line-height: 1.25;
+  table-layout: fixed;
   color: #0b0c0c;
   width: 100%;
   margin-bottom: 20px;
+}
+
+.colour-table td:first-child {
+  width: 50px;
 }
 
 .colour-dot {
