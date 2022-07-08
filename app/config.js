@@ -13,14 +13,14 @@ module.exports = {
   useAuth: 'true',
 
   // Automatically stores form data, and send to all views
-  useAutoStoreData: 'true',
+  useAutoStoreData: 'false',
 
   // Enable cookie-based session store (persists on restart)
   // Please note 4KB cookie limit per domain, cookies too large will silently be ignored
   useCookieSessionStore: 'false',
 
   // Enable or disable built-in docs and examples.
-  useDocumentation: 'true',
+  useDocumentation: 'false',
 
   // Force HTTP to redirect to HTTPS on production
   useHttps: 'true',
