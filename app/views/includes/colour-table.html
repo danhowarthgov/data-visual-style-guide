@@ -1,0 +1,15 @@
+<div class="table-wrapper">
+<table class="colour-table">
+  <tbody>
+    {% for colour in colours %}
+      <tr>
+        <td>
+          <span class="colour-dot" style="background-color: {{ colour.value or colour }}"></span>
+        </td>
+        <td>{{ colour.value or colour }}</td>
+        <td>{{ colour.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>

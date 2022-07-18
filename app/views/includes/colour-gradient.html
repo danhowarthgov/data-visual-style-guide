@@ -1,0 +1,1 @@
+<div class="colour-block" style="background:linear-gradient(90deg, {% for colour in colours %}{{ colour.value or colour }}{% if not loop.last %}, {% endif %}{% endfor %});"></div>
