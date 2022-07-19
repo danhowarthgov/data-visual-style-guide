@@ -1,0 +1,4 @@
+{% set stops = 100 / colours.length %}
+
+<div class="colour-block" style="background:linear-gradient(90deg, {% for colour in colours %}
+{{ colour.value or colour }} {{ loop.index0 * stops}}%, {{ colour.value or colour }} {{ loop.index * stops}}%{% if not loop.last %}, {% endif %}{% endfor %});"></div>

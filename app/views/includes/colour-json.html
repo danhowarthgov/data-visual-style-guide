@@ -1,0 +1,20 @@
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      JSON of hexadecimal colour values
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <code>
+      <pre>
+      {
+        colours: [
+        {% for colour in colours %}
+          "{{ colour.value or colour }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+        ]
+      }
+      </pre>
+    </code>
+  </div>
+</details>

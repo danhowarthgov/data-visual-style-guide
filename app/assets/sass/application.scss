@@ -33,6 +33,7 @@ img {
 }
 
 .app-subnav__section-item--current {
+  margin-left: -14px;
   padding-left: 10px;
   border-left: 4px solid #1d70b8;
 }
@@ -96,14 +97,26 @@ blockquote p:last-of-type {
   font-weight: 400;
   font-size: 19px;
   line-height: 1.25;
+  table-layout: fixed;
   color: #0b0c0c;
   width: 100%;
   margin-bottom: 20px;
 }
 
+.colour-table td:first-child {
+  width: 50px;
+}
+
 .colour-dot {
+  display: inline-block;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  display: inline-block;
+  border: 1px solid #b1b4b6;
+}
+
+.colour-block {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
 }
