@@ -47,6 +47,13 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  classes: "govuk-width-container",
+  html: 'This is a new service – your <a class="govuk-link" href="/#feedback">feedback</a> will help us to improve it.'
+}) }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -73,8 +80,8 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-    {# {% include "includes/scripts.html" %} #}
-    {# {% block pageScripts %}{% endblock %} #}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
