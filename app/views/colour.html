@@ -1,17 +1,19 @@
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
 {% set pageTitle = "Colour" %}
 {% extends "layout.html" %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-quarter">
-    {% include "includes/navigation.html" %}
-  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% include "includes/navigation.html" %}
+    </div>
 
-  <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-xl">Colour</h1>
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl">Colour</h1>
 
-    <p>
+      <p>
       Taken from the existing
       <a
         href="https://design-system.service.gov.uk/styles/colour/"
@@ -20,62 +22,295 @@
       for existing styles or patterns.
     </p>
 
-    <h2 class="govuk-heading-m">Text</h2>
+      <h2 class="govuk-heading-m">Text</h2>
 
-    <table class="colour-table">
-      <tbody>
-        <tr>
-          <td>
-            <span class="colour-dot" style="background-color: #000"></span>
-          </td>
-          <td>Main text colour</td>
-          <td>#000000</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="colour-dot" style="background-color: #1d70b8"></span>
-          </td>
-          <td>Link colour</td>
-          <td>#1d70b8</td>
-        </tr>
-      </tbody>
-    </table>
+      {% set colours = [
+        {
+          value: "#000000",
+          description: "Main text colour"
+        }, {
+          value: "#1d70b8",
+          description: "Link colour"
+        }
+      ] %}
 
-    <h2 class="govuk-heading-m">Colour palette</h2>
+      {% include "includes/colour-table.html" %}
 
-    <table class="colour-table">
-      <tbody>
-        <tr>
-          <td>
-            <span class="colour-dot" style="background-color: #003078"></span>
-          </td>
-          <td>First data set colour</td>
-          <td>#003078</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="colour-dot" style="background-color: #009988"></span>
-          </td>
-          <td>Secondary data set colour</td>
-          <td>#009988</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="colour-dot" style="background-color: #666666"></span>
-          </td>
-          <td>Graph x/y axis label colours</td>
-          <td>#666666</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="colour-dot" style="background-color: #b1b4b6"></span>
-          </td>
-          <td>Border lines</td>
-          <td>#b1b4b6</td>
-        </tr>
-      </tbody>
-    </table>
+      <h2 class="govuk-heading-m">Label and Axis</h2>
+
+      {% set colours = [
+        {
+          value: "#666666",
+          description: "Graph x/y axis label colours"
+        }, {
+          value: "#b1b4b6",
+          description: "Border lines"
+        }
+      ] %}
+
+      {% include "includes/colour-table.html" %}
+
+      <h2 class="govuk-heading-m">Categorical</h2>
+
+      <p>Used to colour multiple individual data points, or entire graphs, and make them distinguishable. Applied in sequence to create contrast between adjoining colours which aid with vision deficiencies.</p>
+
+      <p>Although eight colours are provided a limit of four categories is advised to prevent a chart becoming too cluttered. Please consider your data representation carefully.</p>
+
+      {{ govukDetails({
+        summaryText: "Tools that don't honour sequence",
+        html: "<p>Accessibility problems arise when tooling doesn't follow the sequence in which these colours are defined. If you are able to, manually re-assign items so the order is maintained.</p>
+        <p>If this is not possible in the tool then a potential workaround is to provide multiple versions of differing colour orders in the hope that a suitable order is available.</p>"
+      }) }}
+
+      {% set colours = [
+        "#12436D",
+        "#28A197",
+        "#801650",
+        "#F46A25",
+        "#3D3D3D",
+        "#4a98dc",
+        "#006422",
+        "#A285D1"
+      ] %}
+
+      {% include "includes/colour-steps.html" %}
+      {% include "includes/colour-json.html" %}
+
+      <h2 class="govuk-heading-m">Sequential</h2>
+
+      <p>Used to represent which values are larger or smaller.</p>
+      <p>Note: PowerBI asks for Minimum, Centre, Maximum values and does interpolation itself.</p>
+
+      {% set colours = [
+        "#c01f0c",
+        "#c93c1f",
+        "#d25330",
+        "#da6741",
+        "#e27a52",
+        "#e88d64",
+        "#ee9f76",
+        "#f4b288",
+        "#f8c49b",
+        "#fcd7ae"
+      ] %}
+
+      {% include "includes/colour-gradient.html" %}
+      {% include "includes/colour-steps.html" %}
+      {% include "includes/colour-json.html" %}
+
+      {% set colours = [
+        "#00437a",
+        "#255186",
+        "#3c6091",
+        "#4f709d",
+        "#6180a9",
+        "#7390b5",
+        "#85a0c1",
+        "#97b1ce",
+        "#a9c3da",
+        "#bbd4e6"
+      ] %}
+
+      {% include "includes/colour-gradient.html" %}
+      {% include "includes/colour-steps.html" %}
+      {% include "includes/colour-json.html" %}
+{#
+      <p>TODO - include this green to light green one?</p>
+
+      {% set colours = [
+        "#009988",
+        "#32a495",
+        "#4cafa1",
+        "#62bbae",
+        "#77c6bb",
+        "#8bd1c8",
+        "#9eddd6",
+        "#b1e8e3",
+        "#c4f3f1",
+        "#d7ffff"
+      ] %}
+
+      {% include "includes/colour-gradient.html" %}
+      {% include "includes/colour-steps.html" %} #}
+
+      <h2 class="govuk-heading-m">Diverging</h2>
+
+      <p>A combination of the sequential measures to increase the spectrum. e.g. from positive to negative values.</p>
+
+      {% set colours = [
+        "#c01f0c",
+        "#c93c1f",
+        "#d25330",
+        "#da6741",
+        "#e27a52",
+        "#e88d64",
+        "#ee9f76",
+        "#f4b288",
+        "#f8c49b",
+        "#fcd7ae",
+        "#bbd4e6",
+        "#a9c3da",
+        "#97b1ce",
+        "#85a0c1",
+        "#7390b5",
+        "#6180a9",
+        "#4f709d",
+        "#3c6091",
+        "#255186",
+        "#00437a"
+      ] %}
+
+      {#  https://carbondesignsystem.com/data-visualization/color-palettes/ #}
+      {# {% set colours = [
+        "#750e13",
+        "#a2191f",
+        "#da1e28",
+        "#fa4d56",
+        "#ff8389",
+        "#ffb3b8",
+        "#ffd7d9",
+        "#fff1f1",
+        "#e5f6ff",
+        "#bae6ff",
+        "#82cfff",
+        "#33b1ff",
+        "#1192e8",
+        "#0072c3",
+        "#00539a",
+        "#003a6d"
+      ] %} #}
+
+      {% include "includes/colour-gradient.html" %}
+      {% include "includes/colour-steps.html" %}
+      {% include "includes/colour-json.html" %}
+
+      <h2 class="govuk-heading-m">Overarching</h2>
+
+      <p>These exist as a palette to select individual colours to standardise text, backgrounds, etc. It is made up of the text, label, axis, Categorical, and prominent Sequential colours.</p>
+
+      {% set colours = [
+        "#000000",
+        "#1d70b8",
+        "#666666",
+        "#b1b4b6",
+
+        "#12436D",
+        "#28A197",
+        "#801650",
+        "#F46A25",
+        "#3D3D3D",
+        "#4a98dc",
+        "#006422",
+        "#A285D1",
+
+        "#c01f0c",
+        "#fcd7ae",
+
+        "#00437a",
+        "#bbd4e6"
+      ] %}
+
+      {% include "includes/colour-steps.html" %}
+      {% include "includes/colour-json.html" %}
+{#
+      <hr/>
+
+      <h1 class="govuk-heading-l">Current Usages</h1>
+
+      <h2 class="govuk-heading-m">Qlik: scales.name: Sequential Gradient</h2>
+
+      {% set colours = [
+        "#662506",
+        "#993404",
+        "#cc4c02",
+        "#ec7014",
+        "#fb9a29",
+        "#fec44f",
+        "#fee391",
+        "#fff7bc"
+      ] %}
+
+      {% include "includes/colour-gradient.html" %}
+
+      <h2 class="govuk-heading-m">Qlik: palettes.data.name: Location</h2>
+
+      {% set colours = [
+        "#2e358b",
+        "#28a197",
+        "#f499be",
+        "#b58840",
+        "#6f72af",
+        "#f79459",
+        "#d53880",
+        "#5694ca",
+        "#c895c4",
+        "#626a6e",
+        "#8eb8dc"
+      ] %}
+
+      {% include "includes/colour-steps.html" %}
+
+      <h2 class="govuk-heading-m">Qlik: palettes.data.name: Dimension</h2>
+
+      {% set colours = [
+        "#4c2c92",
+        "#b58840",
+        "#6f72af",
+        "#c895c4",
+        "#28a197",
+        "#912b88",
+        "#85994b",
+        "#8eb8dc"
+      ] %}
+
+      {% include "includes/colour-steps.html" %}
+
+      <h2 class="govuk-heading-m">Qlik: palettes.data.name: Comparison</h2>
+
+      {% set colours = ["#00447b", "#e05206", "#231f20"] %}
+
+      {% include "includes/colour-steps.html" %}
+
+      <h2 class="govuk-heading-m">Qlik: palettes.ui.name: GDS Colour Range</h2>
+
+      {% set colours = [
+        "#d4351c",
+        "#ffdd00",
+        "#00703c",
+        "#1d70b8",
+        "#003078",
+        "#5694ca",
+        "#4c2c92",
+        "#0b0c0c",
+        "#6f777b",
+        "#b1b4b6",
+        "#f3f2f1",
+        "#ffffff",
+        "#6f72af",
+        "#912b88",
+        "#d53880",
+        "#f499be",
+        "#f47738",
+        "#b58840",
+        "#85994b",
+        "#28a197"
+      ] %}
+
+      {% include "includes/colour-steps.html" %}
+
+      <h2 class="govuk-heading-m">OpsMI Categorical</h2>
+      <p>This doesn't meet an acceptable contrast when viewed with Achromatopsia (total colour blindness).</p>
+      {% set colours = [
+        "#005ea6",
+        "#f47738",
+        "#28a197",
+        "#912b88",
+        "#b10e1e",
+        "#febf47"
+      ] %}
+
+      {% include "includes/colour-steps.html" %} #}
+    </div>
   </div>
-</div>
 
 {% endblock %}
