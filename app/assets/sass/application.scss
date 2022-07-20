@@ -120,3 +120,11 @@ blockquote p:last-of-type {
   height: 50px;
   margin-bottom: 20px;
 }
+
+// Code snippets
+.govuk-details pre {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 14px;
+  background-color: govuk-colour("light-grey");
+}
