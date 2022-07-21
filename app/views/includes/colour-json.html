@@ -4,17 +4,16 @@
       JSON of hexadecimal colour values
     </span>
   </summary>
-  <div class="govuk-details__text">
+  <div class="govuk-details">
+    {# The formatting here looks horrible but Nunjucks is very litteral in its output #}
     <code>
       <pre>
-      {
-        colours: [
-        {% for colour in colours %}
-          "{{ colour.value or colour }}"{% if not loop.last %},{% endif %}
-        {% endfor %}
-        ]
-      }
-      </pre>
+{
+  colours: [
+    {% for colour in colours %}"{{ colour.value or colour }}"{% if not loop.last %},
+    {% endif %}{% endfor %}
+  ]
+}</pre>
     </code>
   </div>
 </details>
