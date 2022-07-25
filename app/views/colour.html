@@ -14,33 +14,87 @@
       <h1 class="govuk-heading-xl">Colour</h1>
 
       <p>
-      Taken from the existing
+      The following are taken from the existing
       <a
         href="https://design-system.service.gov.uk/styles/colour/"
         >design system colours</a
-      >
-      for existing styles or patterns.
-    </p>
+      > of text, links, inputs, and focussed elements.
+     </p>
 
       <h2 class="govuk-heading-m">Text</h2>
 
       {% set colours = [
         {
-          value: "#000000",
+          value: "#0b0c0c",
           description: "Main text colour"
         }, {
-          value: "#1d70b8",
-          description: "Link colour"
+          value: "#505a5f",
+          description: "Secondary text colour"
         }
       ] %}
 
       {% include "includes/colour-table.html" %}
 
+      <h2 class="govuk-heading-m">Links</h2>
+
+      {% set colours = [
+        {
+          value: "#1d70b8",
+          description: "Link colour"
+        }, {
+          value: "#003078",
+          description: "Link hover colour"
+        }, {
+          value: "#4c2c92",
+          description: "Link visited colour"
+        }, {
+          value: "#0b0c0c",
+          description: "Link active colour"
+        }
+      ] %}
+
+      {% include "includes/colour-table.html" %}
+
+      <h2 class="govuk-heading-m">Focus state</h2>
+
+      {% set colours = [
+        {
+          value: "#ffdd00",
+          description: "Focus colour (only use this to indicate which element is focused on)"
+        }, {
+          value: "#0b0c0c",
+          description: "Focus text colour"
+        }
+      ] %}
+
+      {% include "includes/colour-table.html" %}
+
+      <h2 class="govuk-heading-m">Alert states</h2>
+
+      {% set colours = [
+        {
+          value: "#d4351c",
+          description: "Error message colour"
+        }, {
+          value: "#f47738",
+          description: "Warning message colour"
+        }, {
+          value: "#00703c",
+          description: "Success message colour"
+        }
+      ] %}
+
+      {% include "includes/colour-table.html" %}
+
+      <h2 class="govuk-heading-l">Visualisation colours</h2>
+
+      <p>The following palettes are broken down into their usage criteria on charts and graphs.</p>
+
       <h2 class="govuk-heading-m">Label and Axis</h2>
 
       {% set colours = [
         {
-          value: "#666666",
+          value: "#505a5f",
           description: "Graph x/y axis label colours"
         }, {
           value: "#b1b4b6",
@@ -79,7 +133,11 @@
       <h2 class="govuk-heading-m">Sequential</h2>
 
       <p>Used to represent which values are larger or smaller.</p>
-      <p>Note: PowerBI asks for Minimum, Centre, Maximum values and does interpolation itself.</p>
+
+      {{ govukDetails({
+        summaryText: "Tools that request minimum and maximum values",
+        html: "<p>Some tools, such as PowerBI, request minimum, and maximum values to calculate the gradient states. In this case use the first and last colours from the palette.</p>"
+      }) }}
 
       {% set colours = [
         "#c01f0c",
@@ -114,7 +172,7 @@
       {% include "includes/colour-gradient.html" %}
       {% include "includes/colour-steps.html" %}
       {% include "includes/colour-json.html" %}
-{#
+      {#
       <p>TODO - include this green to light green one?</p>
 
       {% set colours = [
@@ -188,12 +246,21 @@
 
       <p>These exist as a palette to select individual colours to standardise text, backgrounds, etc. It is made up of the text, label, axis, Categorical, and prominent Sequential colours.</p>
 
+      <p>Care must be taken to use these colours in line with the guidelines, e.g. the yellow focus colour should not be used outside of highlighting a focussed element.</p>
+
+      <p>Discrepancies in usage will dilute the representation of the meanings associated with the colours.</p>
+
       {% set colours = [
         "#000000",
+        "#505a5f",
         "#1d70b8",
-        "#666666",
+        "#003078",
+        "#4c2c92",
+        "#ffdd00",
+        "#d4351c",
+        "#f47738",
+        "#00703c",
         "#b1b4b6",
-
         "#12436D",
         "#28A197",
         "#801650",
@@ -202,114 +269,14 @@
         "#4a98dc",
         "#006422",
         "#A285D1",
-
         "#c01f0c",
         "#fcd7ae",
-
         "#00437a",
         "#bbd4e6"
       ] %}
 
       {% include "includes/colour-steps.html" %}
       {% include "includes/colour-json.html" %}
-{#
-      <hr/>
-
-      <h1 class="govuk-heading-l">Current Usages</h1>
-
-      <h2 class="govuk-heading-m">Qlik: scales.name: Sequential Gradient</h2>
-
-      {% set colours = [
-        "#662506",
-        "#993404",
-        "#cc4c02",
-        "#ec7014",
-        "#fb9a29",
-        "#fec44f",
-        "#fee391",
-        "#fff7bc"
-      ] %}
-
-      {% include "includes/colour-gradient.html" %}
-
-      <h2 class="govuk-heading-m">Qlik: palettes.data.name: Location</h2>
-
-      {% set colours = [
-        "#2e358b",
-        "#28a197",
-        "#f499be",
-        "#b58840",
-        "#6f72af",
-        "#f79459",
-        "#d53880",
-        "#5694ca",
-        "#c895c4",
-        "#626a6e",
-        "#8eb8dc"
-      ] %}
-
-      {% include "includes/colour-steps.html" %}
-
-      <h2 class="govuk-heading-m">Qlik: palettes.data.name: Dimension</h2>
-
-      {% set colours = [
-        "#4c2c92",
-        "#b58840",
-        "#6f72af",
-        "#c895c4",
-        "#28a197",
-        "#912b88",
-        "#85994b",
-        "#8eb8dc"
-      ] %}
-
-      {% include "includes/colour-steps.html" %}
-
-      <h2 class="govuk-heading-m">Qlik: palettes.data.name: Comparison</h2>
-
-      {% set colours = ["#00447b", "#e05206", "#231f20"] %}
-
-      {% include "includes/colour-steps.html" %}
-
-      <h2 class="govuk-heading-m">Qlik: palettes.ui.name: GDS Colour Range</h2>
-
-      {% set colours = [
-        "#d4351c",
-        "#ffdd00",
-        "#00703c",
-        "#1d70b8",
-        "#003078",
-        "#5694ca",
-        "#4c2c92",
-        "#0b0c0c",
-        "#6f777b",
-        "#b1b4b6",
-        "#f3f2f1",
-        "#ffffff",
-        "#6f72af",
-        "#912b88",
-        "#d53880",
-        "#f499be",
-        "#f47738",
-        "#b58840",
-        "#85994b",
-        "#28a197"
-      ] %}
-
-      {% include "includes/colour-steps.html" %}
-
-      <h2 class="govuk-heading-m">OpsMI Categorical</h2>
-      <p>This doesn't meet an acceptable contrast when viewed with Achromatopsia (total colour blindness).</p>
-      {% set colours = [
-        "#005ea6",
-        "#f47738",
-        "#28a197",
-        "#912b88",
-        "#b10e1e",
-        "#febf47"
-      ] %}
-
-      {% include "includes/colour-steps.html" %} #}
     </div>
   </div>
 
