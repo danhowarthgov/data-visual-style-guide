@@ -1,3 +1,5 @@
+$govuk-font-family: Arial, sans-serif;
+
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
@@ -57,7 +59,7 @@ img {
 }
 
 blockquote {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: arial, sans-serif;
   margin: 0;
   padding: 10px;
   background-color: #f3f2f1;
